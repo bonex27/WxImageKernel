@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WxImageKernel.dir/build.make CMakeFiles/WxImageKernel.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+wxImagePanel.o: wxImagePanel.cpp.o
+.PHONY : wxImagePanel.o
+
+# target to build an object file
+wxImagePanel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WxImageKernel.dir/build.make CMakeFiles/WxImageKernel.dir/wxImagePanel.cpp.o
+.PHONY : wxImagePanel.cpp.o
+
+wxImagePanel.i: wxImagePanel.cpp.i
+.PHONY : wxImagePanel.i
+
+# target to preprocess a source file
+wxImagePanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WxImageKernel.dir/build.make CMakeFiles/WxImageKernel.dir/wxImagePanel.cpp.i
+.PHONY : wxImagePanel.cpp.i
+
+wxImagePanel.s: wxImagePanel.cpp.s
+.PHONY : wxImagePanel.s
+
+# target to generate assembly for a file
+wxImagePanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WxImageKernel.dir/build.make CMakeFiles/WxImageKernel.dir/wxImagePanel.cpp.s
+.PHONY : wxImagePanel.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... wxImagePanel.o"
+	@echo "... wxImagePanel.i"
+	@echo "... wxImagePanel.s"
 .PHONY : help
 
 

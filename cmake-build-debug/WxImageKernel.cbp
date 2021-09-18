@@ -99,6 +99,12 @@
 		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/main.cpp">
 			<Option target="WxImageKernel"/>
 		</Unit>
+		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.cpp">
+			<Option target="WxImageKernel"/>
+		</Unit>
+		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.h">
+			<Option target="WxImageKernel"/>
+		</Unit>
 		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

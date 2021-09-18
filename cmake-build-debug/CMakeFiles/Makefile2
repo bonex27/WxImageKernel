@@ -81,12 +81,12 @@ clean: CMakeFiles/WxImageKernel.dir/clean
 CMakeFiles/WxImageKernel.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WxImageKernel.dir/build.make CMakeFiles/WxImageKernel.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WxImageKernel.dir/build.make CMakeFiles/WxImageKernel.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target WxImageKernel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target WxImageKernel"
 .PHONY : CMakeFiles/WxImageKernel.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/WxImageKernel.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/WxImageKernel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/WxImageKernel.dir/rule

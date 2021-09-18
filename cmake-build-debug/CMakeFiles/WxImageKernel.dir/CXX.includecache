@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/bonex/CLionProjects/WxImageKernel/main.cpp
+/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.cpp
+wxImagePanel.h
+/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.h
+
+/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.h
 wx/wx.h
--
-wx/sizer.h
--
+/Users/bonex/CLionProjects/WxImageKernel/wx/wx.h
 
 /usr/local/include/wx-3.1/wx/accel.h
 wx/defs.h

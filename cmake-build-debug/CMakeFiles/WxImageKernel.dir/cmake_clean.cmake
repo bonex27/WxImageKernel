@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/WxImageKernel.dir/main.cpp.o"
+  "CMakeFiles/WxImageKernel.dir/wxImagePanel.cpp.o"
   "WxImageKernel"
   "WxImageKernel.pdb"
 )

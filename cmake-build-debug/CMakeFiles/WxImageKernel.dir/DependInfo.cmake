@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/bonex/CLionProjects/WxImageKernel/main.cpp" "/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/CMakeFiles/WxImageKernel.dir/main.cpp.o"
+  "/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.cpp" "/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/CMakeFiles/WxImageKernel.dir/wxImagePanel.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
