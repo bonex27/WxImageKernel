@@ -13,6 +13,7 @@ class MainFrame : public wxFrame {
 public:
     MainFrame();
     wxImagePanel * drawPane;
+    wxBoxSizer* sizer;
 private:
     void OpenFile(wxCommandEvent& event);
     wxString CurrentDocPath;

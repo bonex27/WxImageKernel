@@ -3,12 +3,13 @@
 //
 
 #include "wxImagePanel.h"
+#include <iostream>
 
 wxImagePanel::wxImagePanel(wxFrame* parent, wxString file, wxBitmapType format) :
         wxPanel(parent)
 {
     // load the file... ideally add a check to see if loading was successful
-    image.LoadFile(file, format);
+    std::cout << image.LoadFile("./Image/FotoProfilo.JPG", wxString("image/jpeg'")) << std::endl;
     w = -1;
     h = -1;
 }

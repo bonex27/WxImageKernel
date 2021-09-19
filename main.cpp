@@ -10,6 +10,7 @@ public:
 
 bool MyApp::OnInit()
 {
+    wxInitAllImageHandlers();
     MainFrame *frame = new MainFrame;
     frame->Show(true);
     return true;
