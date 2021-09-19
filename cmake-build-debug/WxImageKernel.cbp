@@ -8,104 +8,108 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug"/>
+				<Option working_dir="/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug"/>
+				<Option working_dir="/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug"/>
+				<Option working_dir="/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="WxImageKernel">
-				<Option output="/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/WxImageKernel" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug"/>
+				<Option output="/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/WxImageKernel" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-D_FILE_OFFSET_BITS=64"/>
 					<Add option="-DWXUSINGDLL"/>
-					<Add option="-D__WXMAC__"/>
-					<Add option="-D__WXOSX__"/>
-					<Add option="-D__WXOSX_COCOA__"/>
-					<Add directory="/Users/bonex/CLionProjects/WxImageKernel/Image"/>
-					<Add directory="/usr/local/lib/wx/include/osx_cocoa-unicode-3.1"/>
-					<Add directory="/usr/local/include/wx-3.1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/home/lorenzo/Scrivania/WxImageKernel/Image"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0"/>
+					<Add directory="/usr/include/wx-3.0"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 WxImageKernel"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 WxImageKernel"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="WxImageKernel/fast">
-				<Option output="/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/WxImageKernel" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug"/>
+				<Option output="/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/WxImageKernel" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-D_FILE_OFFSET_BITS=64"/>
 					<Add option="-DWXUSINGDLL"/>
-					<Add option="-D__WXMAC__"/>
-					<Add option="-D__WXOSX__"/>
-					<Add option="-D__WXOSX_COCOA__"/>
-					<Add directory="/Users/bonex/CLionProjects/WxImageKernel/Image"/>
-					<Add directory="/usr/local/lib/wx/include/osx_cocoa-unicode-3.1"/>
-					<Add directory="/usr/local/include/wx-3.1"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add option="-D__WXGTK__"/>
+					<Add directory="/home/lorenzo/Scrivania/WxImageKernel/Image"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0"/>
+					<Add directory="/usr/include/wx-3.0"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 WxImageKernel/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/bonex/CLionProjects/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 WxImageKernel/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/lorenzo/Scrivania/WxImageKernel/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/main.cpp">
+		<Unit filename="/home/lorenzo/Scrivania/WxImageKernel/MainFrame.cpp">
 			<Option target="WxImageKernel"/>
 		</Unit>
-		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.cpp">
+		<Unit filename="/home/lorenzo/Scrivania/WxImageKernel/MainFrame.h">
 			<Option target="WxImageKernel"/>
 		</Unit>
-		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/wxImagePanel.h">
+		<Unit filename="/home/lorenzo/Scrivania/WxImageKernel/main.cpp">
 			<Option target="WxImageKernel"/>
 		</Unit>
-		<Unit filename="/Users/bonex/CLionProjects/WxImageKernel/CMakeLists.txt">
+		<Unit filename="/home/lorenzo/Scrivania/WxImageKernel/wxImagePanel.cpp">
+			<Option target="WxImageKernel"/>
+		</Unit>
+		<Unit filename="/home/lorenzo/Scrivania/WxImageKernel/wxImagePanel.h">
+			<Option target="WxImageKernel"/>
+		</Unit>
+		<Unit filename="/home/lorenzo/Scrivania/WxImageKernel/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
