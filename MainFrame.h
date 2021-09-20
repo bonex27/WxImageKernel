@@ -12,11 +12,19 @@
 class MainFrame : public wxFrame {
 public:
     MainFrame();
+
     wxImagePanel * drawPane;
     wxBoxSizer* sizer;
+    wxPanel *panel;
+    wxBoxSizer *vbox;
+
+    wxGridSizer *gs;
+
 private:
     void OpenFile(wxCommandEvent& event);
     wxString CurrentDocPath;
+    void LoadMenu();
+
     enum{
         ID_ImgLoad = 1
     };
