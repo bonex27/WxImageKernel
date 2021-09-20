@@ -49,7 +49,6 @@
 					<Add option="-D__WXMAC__"/>
 					<Add option="-D__WXOSX__"/>
 					<Add option="-D__WXOSX_COCOA__"/>
-					<Add directory="/Users/bonex/CLionProjects/WxImageKernel/Image"/>
 					<Add directory="/usr/local/lib/wx/include/osx_cocoa-unicode-3.1"/>
 					<Add directory="/usr/local/include/wx-3.1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
@@ -78,7 +77,6 @@
 					<Add option="-D__WXMAC__"/>
 					<Add option="-D__WXOSX__"/>
 					<Add option="-D__WXOSX_COCOA__"/>
-					<Add directory="/Users/bonex/CLionProjects/WxImageKernel/Image"/>
 					<Add directory="/usr/local/lib/wx/include/osx_cocoa-unicode-3.1"/>
 					<Add directory="/usr/local/include/wx-3.1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>

@@ -16,7 +16,7 @@ class wxImagePanel : public wxPanel{
     int w, h;
 
 public:
-    wxImagePanel(wxFrame* parent, wxString file, wxBitmapType format);
+    wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format);
     wxImagePanel() {}
     void paintEvent(wxPaintEvent & evt);
     void paintNow();

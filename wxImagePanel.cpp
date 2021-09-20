@@ -5,11 +5,11 @@
 #include "wxImagePanel.h"
 #include <iostream>
 
-wxImagePanel::wxImagePanel(wxFrame* parent, wxString file, wxBitmapType format) :
+wxImagePanel::wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format) :
         wxPanel(parent)
 {
     // load the file... ideally add a check to see if loading was successful
-    std::cout << image.LoadFile("./Image/FotoProfilo.JPG", wxString("image/jpeg'")) << std::endl;
+    std::cout << image.LoadFile(file, format) << std::endl;
     w = -1;
     h = -1;
 }
@@ -54,7 +54,7 @@ void wxImagePanel::render(wxDC&  dc)
 
     if( neww != w || newh != h )
     {
-        resized = wxBitmap( image.Scale( neww, newh /*, wxIMAGE_QUALITY_HIGH*/ ) );
+        resized = wxBitmap( image.Scale( neww, newh , wxIMAGE_QUALITY_HIGH ) );
         w = neww;
         h = newh;
         dc.DrawBitmap( resized, 0, 0, false );
