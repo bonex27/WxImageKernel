@@ -7,16 +7,21 @@
 MainFrame::MainFrame()
         : wxFrame(NULL, wxID_ANY, "Kernel image processing",wxDefaultPosition,wxSize(1280,720))
 {
-     panel = new wxPanel(this, -1);
-     vbox = new wxBoxSizer(wxVERTICAL);
+    panel = new wxPanel(this, -1);
+    //create a column in the layout of the panel
+    vbox = new wxBoxSizer(wxVERTICAL);
 
+    //Appends a spacer child to the sizer.
     vbox->Add(-1, 10);
 
-    wxBoxSizer *hbox3 = new wxBoxSizer(wxHORIZONTAL);
+    //create a row in the layout of the panel
+    hbox = new wxBoxSizer(wxHORIZONTAL);
     drawPane = new wxImagePanel(panel,"./Image/Ferrari-sf21.jpeg",wxBITMAP_TYPE_JPEG);
-    hbox3->Add(drawPane, 1, wxEXPAND);
 
-    vbox->Add(hbox3, 1, wxLEFT | wxRIGHT | wxEXPAND, 10);
+    //Appends a child to the sizer. proportion is set to 0 that 0 stands for not changeable
+    hbox->Add(drawPane, 0, wxEXPAND);
+
+    vbox->Add(hbox, 1, wxLEFT | wxRIGHT | wxEXPAND, 500);
 
     vbox->Add(-1, 25);
 
@@ -57,7 +62,7 @@ MainFrame::MainFrame()
     Bind(wxEVT_MENU, &MainFrame::OpenFile, this, ID_ImgLoad);
 }
 
-void MainFrame::OpenFile(wxCommandEvent& WXUNUSED(event))
+void MainFrame::OpenFile(wxCommandEvent& event)
 {
     wxFileDialog *OpenDialog = new wxFileDialog(
             this, _("Choose a file to open"), wxEmptyString, wxEmptyString,
@@ -67,19 +72,20 @@ void MainFrame::OpenFile(wxCommandEvent& WXUNUSED(event))
     // Creates a "open file" dialog with 4 file types
     if (OpenDialog->ShowModal() == wxID_OK) // if the user click "Open" instead of "cancel"
     {
-
         CurrentDocPath = OpenDialog->GetPath();
-        drawPane = new wxImagePanel(panel, CurrentDocPath, wxBITMAP_TYPE_JPEG);
-        sizer = new wxBoxSizer(wxHORIZONTAL);
-        sizer->Add(drawPane, 1, wxEXPAND);
-        this->SetSizer(sizer);
+        drawPane->changeImage(CurrentDocPath, wxBITMAP_TYPE_JPEG);
+        Refresh();
+        wxWindow::Update();
+        //sizer = new wxBoxSizer(wxHORIZONTAL);
+        //sizer->Add(drawPane, 1, wxEXPAND);
+        //this->SetSizer(sizer);
 
     }
 }
 
 void MainFrame::LoadMenu() {
     wxMenu *menuFile = new wxMenu;
-    menuFile->Append(ID_ImgLoad, "&Hello...\tCtrl-H",
+    menuFile->Append(ID_ImgLoad, "&Open...\tCtrl-H",
                      "Help string shown in status bar for this menu item");
     menuFile->AppendSeparator();
 

@@ -14,11 +14,9 @@ public:
     MainFrame();
 
     wxImagePanel * drawPane;
-    wxBoxSizer* sizer;
     wxPanel *panel;
     wxBoxSizer *vbox;
-
-    wxGridSizer *gs;
+    wxBoxSizer *hbox;
 
 private:
     void OpenFile(wxCommandEvent& event);

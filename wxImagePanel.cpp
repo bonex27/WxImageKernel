@@ -6,10 +6,11 @@
 #include <iostream>
 
 wxImagePanel::wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format) :
-        wxPanel(parent)
+        wxPanel(parent, wxID_ANY, wxDefaultPosition,
+                wxSize(300, 200), wxTAB_TRAVERSAL, "Image")
 {
     // load the file... ideally add a check to see if loading was successful
-    std::cout << image.LoadFile(file, format) << std::endl;
+    std::cout << this->image.LoadFile(file, format) << std::endl;
     w = -1;
     h = -1;
 }
@@ -71,4 +72,8 @@ void wxImagePanel::OnSize(wxSizeEvent& event){
     Refresh();
     //skip the event.
     event.Skip();
+}
+
+void wxImagePanel::changeImage(wxString file, wxBitmapType format) {
+    std::cout<<image.LoadFile(file, format) << std::endl;
 }
