@@ -14,14 +14,13 @@ MainFrame::MainFrame()
     //Appends a spacer child to the sizer.
     vbox->Add(-1, 10);
 
-    //create a row in the layout of the panel
-    hbox = new wxBoxSizer(wxHORIZONTAL);
+    wxBoxSizer *hbox3 = new wxBoxSizer(wxHORIZONTAL);
+
     drawPane = new wxImagePanel(panel,"./Image/Ferrari-sf21.jpeg",wxBITMAP_TYPE_JPEG);
 
-    //Appends a child to the sizer. proportion is set to 0 that 0 stands for not changeable
-    hbox->Add(drawPane, 0, wxEXPAND);
 
-    vbox->Add(hbox, 1, wxLEFT | wxRIGHT | wxEXPAND, 500);
+    hbox3->Add(drawPane, 1, wxEXPAND);
+    vbox->Add(hbox3, 1, wxLEFT | wxRIGHT | wxEXPAND,10);
 
     vbox->Add(-1, 25);
 

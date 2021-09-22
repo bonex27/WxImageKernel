@@ -12,6 +12,7 @@
 
 class wxImagePanel : public wxPanel{
     wxImage image;
+    wxBitmap img;
     wxBitmap resized;
     int w, h;
 

@@ -6,11 +6,11 @@
 #include <iostream>
 
 wxImagePanel::wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format) :
-        wxPanel(parent, wxID_ANY, wxDefaultPosition,
-                wxSize(300, 200), wxTAB_TRAVERSAL, "Image")
+        wxPanel(parent)
 {
     // load the file... ideally add a check to see if loading was successful
-    std::cout << this->image.LoadFile(file, format) << std::endl;
+//    std::cout << this->image.LoadFile(file, format) << std::endl;
+    std::cout <<  this->img.LoadFile(file,format) << std::endl;
     w = -1;
     h = -1;
 }
@@ -50,18 +50,56 @@ void wxImagePanel::paintNow()
  */
 void wxImagePanel::render(wxDC&  dc)
 {
-    int neww, newh;
-    dc.GetSize( &neww, &newh );
+//    int neww, newh;
+//    dc.GetSize( &neww, &newh );
+//
+//    if( neww != w || newh != h )
+//    {
+//        resized = wxBitmap( image.Size( wxSize(neww,newh), wxPoint(0,0) , 29, 31, 32 ) );
+//        w = neww;
+//        h = newh;
+//        dc.DrawBitmap( resized, 0, 0, false);
+//    }else{
+//        dc.DrawBitmap( resized, 0, 0, false );
+//    }
+    float fWScale = 1.0f;   // horizontal scaling factor
+    float fHScale = 1.0f;   // vertical scaling factor
+    int iImageH = -1;       // the bitmap's height
+    int iImageW = -1;       // the bitmap's width
+    int iThisH = -1;        // the panel's height
+    int iThisW = -1;        // the panel's width
 
-    if( neww != w || newh != h )
+    // how is the bitmap's actual size?
+    iImageH = img.GetHeight();
+    iImageW = img.GetWidth();
+
+    //Panel size
+    GetSize(&iThisW, &iThisH);
+
+    // no division by zero !
+    if( ( iImageH> 0 ) && ( iImageW> 0 ) )
     {
-        resized = wxBitmap( image.Scale( neww, newh , wxIMAGE_QUALITY_HIGH ) );
-        w = neww;
-        h = newh;
-        dc.DrawBitmap( resized, 0, 0, false );
-    }else{
-        dc.DrawBitmap( resized, 0, 0, false );
+        // calculate the scaling factor for the 2 dimensions
+        fHScale = (float) iThisH / (float) iImageH;
+        fWScale = (float) iThisW / (float) iImageW;
+
+        // always take the smaller scaling factor,
+        // so that the bitmap will always fit into the panel's paintable area
+        if(fHScale < fWScale)
+        {
+            fWScale = fHScale;
+        }
+        else
+        {
+            fHScale = fWScale;
+        }
+
     }
+
+    dc.SetUserScale(fHScale, fWScale);
+    dc.DrawBitmap(img,0,0,false);
+
+
 }
 
 /*
