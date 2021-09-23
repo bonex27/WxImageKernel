@@ -59,6 +59,7 @@ MainFrame::MainFrame()
 
     LoadMenu();
     Bind(wxEVT_MENU, &MainFrame::OpenFile, this, ID_ImgLoad);
+    Bind(wxEVT_MENU, &MainFrame::imageSave, this, ID_ImgSave);
 }
 
 void MainFrame::OpenFile(wxCommandEvent& event)
@@ -73,21 +74,20 @@ void MainFrame::OpenFile(wxCommandEvent& event)
     {
         CurrentDocPath = OpenDialog->GetPath();
         drawPane->changeImage(CurrentDocPath, wxBITMAP_TYPE_JPEG);
-        Refresh();
-        wxWindow::Update();
-        //sizer = new wxBoxSizer(wxHORIZONTAL);
-        //sizer->Add(drawPane, 1, wxEXPAND);
-        //this->SetSizer(sizer);
-
     }
+}
+
+void MainFrame::imageSave(wxCommandEvent& event){
+    drawPane->saveImage();
 }
 
 void MainFrame::LoadMenu() {
     wxMenu *menuFile = new wxMenu;
     menuFile->Append(ID_ImgLoad, "&Open...\tCtrl-H",
                      "Help string shown in status bar for this menu item");
+    menuFile->Append(ID_ImgSave, "&Save...\tCtrl-H",
+                     "Save the current Image");
     menuFile->AppendSeparator();
-
     wxMenuBar *menuBar = new wxMenuBar;
     menuBar->Append(menuFile, "&File");
     SetMenuBar( menuBar );

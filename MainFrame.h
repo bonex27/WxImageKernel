@@ -20,11 +20,13 @@ public:
 
 private:
     void OpenFile(wxCommandEvent& event);
+    void imageSave(wxCommandEvent& event);
     wxString CurrentDocPath;
     void LoadMenu();
 
     enum{
-        ID_ImgLoad = 1
+        ID_ImgLoad = 1,
+        ID_ImgSave = 2
     };
 };
 

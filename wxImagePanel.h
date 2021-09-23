@@ -11,7 +11,6 @@
 #endif //WXIMAGEKERNEL_WXIMAGEPANEL_H
 
 class wxImagePanel : public wxPanel{
-    wxImage image;
     wxBitmap img;
     wxBitmap resized;
     int w, h;
@@ -24,6 +23,7 @@ public:
     void OnSize(wxSizeEvent& event);
     void render(wxDC& dc);
     void changeImage(wxString file, wxBitmapType format);
+    void saveImage();
 
     DECLARE_EVENT_TABLE()
 };

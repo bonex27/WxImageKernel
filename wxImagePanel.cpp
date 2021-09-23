@@ -50,18 +50,6 @@ void wxImagePanel::paintNow()
  */
 void wxImagePanel::render(wxDC&  dc)
 {
-//    int neww, newh;
-//    dc.GetSize( &neww, &newh );
-//
-//    if( neww != w || newh != h )
-//    {
-//        resized = wxBitmap( image.Size( wxSize(neww,newh), wxPoint(0,0) , 29, 31, 32 ) );
-//        w = neww;
-//        h = newh;
-//        dc.DrawBitmap( resized, 0, 0, false);
-//    }else{
-//        dc.DrawBitmap( resized, 0, 0, false );
-//    }
     float fWScale = 1.0f;   // horizontal scaling factor
     float fHScale = 1.0f;   // vertical scaling factor
     int iImageH = -1;       // the bitmap's height
@@ -95,11 +83,8 @@ void wxImagePanel::render(wxDC&  dc)
         }
 
     }
-
     dc.SetUserScale(fHScale, fWScale);
     dc.DrawBitmap(img,0,0,false);
-
-
 }
 
 /*
@@ -113,5 +98,13 @@ void wxImagePanel::OnSize(wxSizeEvent& event){
 }
 
 void wxImagePanel::changeImage(wxString file, wxBitmapType format) {
-    std::cout<<image.LoadFile(file, format) << std::endl;
+    std::cout << "Load file: " << file << std::endl;
+    std::cout<<img.LoadFile(file, format) << std::endl;
+    std::cout << img.GetHeight() << std::endl;
+    Refresh();
+    Update();
+}
+
+void wxImagePanel::saveImage() {
+    img.SaveFile("test1", wxBITMAP_TYPE_JPEG, NULL);
 }
