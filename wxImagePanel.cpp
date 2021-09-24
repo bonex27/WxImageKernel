@@ -11,7 +11,7 @@ wxImagePanel::wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format) 
         wxPanel(parent,wxID_ANY,wxDefaultPosition,wxSize(1280,600))
 {
     // load the file... ideally add a check to see if loading was successful
-    std::cout << this->image.LoadFile(file, format) << std::endl;
+    this->image.LoadFile(file, format);
 
 }
 
@@ -71,13 +71,9 @@ void wxImagePanel::render(wxDC&  dc)
         fWScale = (float) iThisW / (float) iImageW;
 
         if(fHScale < fWScale)
-        {
             fWScale = fHScale;
-        }
         else
-        {
             fHScale = fWScale;
-        }
     }
     //dc.SetUserScale(fHScale, fWScale);
     resized = wxBitmap(image.Scale(iImageW*fWScale,iImageH*fHScale,wxIMAGE_QUALITY_HIGH));
@@ -96,13 +92,11 @@ void wxImagePanel::OnSize(wxSizeEvent& event){
 }
 
 void wxImagePanel::changeImage(wxString file, wxBitmapType format) {
-    std::cout << "Load file: " << file << std::endl;
-    std::cout<<image.LoadFile(file, format) << std::endl;
-    std::cout << image.GetHeight() << std::endl;
+    image.LoadFile(file, format);
     Refresh();
     Update();
 }
 
 void wxImagePanel::saveImage(wxString fileName, wxBitmapType format) {
-    std::cout << image.SaveFile(fileName, format) << std::endl;
+    image.SaveFile(fileName, format);
 }

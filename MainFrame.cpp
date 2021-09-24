@@ -3,6 +3,7 @@
 //
 
 #include "MainFrame.h"
+#include <wx/tokenzr.h>
 
 MainFrame::MainFrame()
         : wxFrame(NULL, wxID_ANY, "Kernel image processing",wxDefaultPosition,wxSize(1280,720))
@@ -68,8 +69,10 @@ void MainFrame::OpenFile(wxCommandEvent& event)
     // Creates a "open file" dialog with 4 file types
     if (OpenDialog->ShowModal() == wxID_OK) // if the user click "Open" instead of "cancel"
     {
+        wxString fileName = OpenDialog->GetFilename();
+        wxBitmapType formatFile = getFormatFile(fileName);
         CurrentDocPath = OpenDialog->GetPath();
-        drawPane->changeImage(CurrentDocPath, wxBITMAP_TYPE_JPEG);
+        drawPane->changeImage(CurrentDocPath, formatFile);
     }
 }
 
@@ -78,12 +81,12 @@ void MainFrame::imageSave(wxCommandEvent& event){
             this, _("Save the current image"), wxEmptyString, wxEmptyString,
             _("JPEG files (*jpg)|*.jpg|PNG files (*png)|*.png"),
             wxFD_SAVE, wxDefaultPosition);
-    std::cout << saveDialog->GetWildcard() << std::endl;
     if (saveDialog->ShowModal() == wxID_OK){
+        wxString fileName = saveDialog->GetFilename();
+        wxBitmapType formatFile = getFormatFile(fileName);
         CurrentDocPath = saveDialog->GetPath();
-        drawPane->saveImage(CurrentDocPath, wxBITMAP_TYPE_JPEG);
+        drawPane->saveImage(CurrentDocPath, formatFile);
     }
-
 }
 
 void MainFrame::LoadMenu() {
@@ -109,4 +112,25 @@ void MainFrame::btnEffectClick(wxCommandEvent &event) {
             break;
 
     }
+}
+
+/**
+ * Function that returns the format of a file
+ * @param fileName name of the file in this format (test.jpg, image.png)
+ * @return a wxBitmapType like wxBITMAP_TYPE_JPEG, wxBITMAP_TYPE_PNG
+ */
+wxBitmapType MainFrame::getFormatFile(const wxString &fileName) {
+    wxStringTokenizer tokenizer(fileName, ".");
+    wxString formatTokenized = "jpg"; //default format to save images
+
+    while (tokenizer.HasMoreTokens())
+        formatTokenized = tokenizer.GetNextToken();   //split the given string
+
+    wxBitmapType formatFile = wxBITMAP_TYPE_JPEG;
+    if (formatTokenized == "png")
+        formatFile = wxBITMAP_TYPE_PNG;
+    else if (formatTokenized == "bmp")
+        formatFile = wxBITMAP_TYPE_BMP;
+    //other format files...
+    return formatFile;
 }

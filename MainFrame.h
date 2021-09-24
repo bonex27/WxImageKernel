@@ -22,6 +22,7 @@ private:
     void OpenFile(wxCommandEvent& event);
     void imageSave(wxCommandEvent& event);
     void btnEffectClick(wxCommandEvent& event);
+    wxBitmapType getFormatFile(const wxString& fileName);
 
     wxString CurrentDocPath;
     void LoadMenu();
