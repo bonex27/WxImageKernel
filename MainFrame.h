@@ -21,12 +21,22 @@ public:
 private:
     void OpenFile(wxCommandEvent& event);
     void imageSave(wxCommandEvent& event);
+    void btnEffectClick(wxCommandEvent& event);
+
     wxString CurrentDocPath;
     void LoadMenu();
 
     enum{
         ID_ImgLoad = 1,
-        ID_ImgSave = 2
+        ID_ImgSave = 2,
+        Id_EffectNull,
+        Id_Effect1,
+        Id_Effect2,
+        Id_Effect3,
+        Id_Effect4,
+        Id_Effect5,
+
+
     };
 };
 

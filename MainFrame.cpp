@@ -12,38 +12,37 @@ MainFrame::MainFrame()
     //create a column in the layout of the panel
     vbox = new wxBoxSizer(wxVERTICAL);
 
-    //wxBoxSizer *hbox3 = new wxBoxSizer(wxHORIZONTAL);
-
     drawPane = new wxImagePanel(panel,"./Image/Ferrari-sf21.jpeg",wxBITMAP_TYPE_JPEG);
-    //hbox3->Add(drawPane, 1, wxEXPAND);
+
     vbox->Add(drawPane, 1, wxALIGN_CENTER,0);
 
     wxBoxSizer *hbox4 = new wxBoxSizer(wxHORIZONTAL);
-    //wxFlexGridSizer *fgs = new wxFlexGridSizer(1, 6, 5, 5);
 
-//    fgs->Add(new wxButton(this, -1, wxT("1")), 0, wxEXPAND);
-//    fgs->Add(new wxButton(this, -1, wxT("2")), 0, wxEXPAND);
-//    fgs->Add(new wxButton(this, -1, wxT("3")), 0, wxEXPAND);
-//    fgs->Add(new wxButton(this, -1, wxT("1")), 0, wxEXPAND);
-//    fgs->Add(new wxButton(this, -1, wxT("2")), 0, wxEXPAND);
-//    fgs->Add(new wxButton(this, -1, wxT("3")), 0, wxEXPAND);
 
-    wxButton *btn1 = new wxButton(panel, wxID_ANY, wxT("Nessuno"));
+
+
+    wxButton *btn1 = new wxButton(panel, Id_EffectNull, wxT("Nessuno"));
+    btn1->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_EffectNull);
     hbox4->Add(btn1, 1, wxEXPAND, 10);
 
-    wxButton *btn2 = new wxButton(panel, wxID_ANY, wxT("Filtro1"));
+    wxButton *btn2 = new wxButton(panel, Id_Effect1, wxT("Filtro1"));
+    btn2->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_Effect1);
     hbox4->Add(btn2, 1, wxEXPAND, 10);
 
-    wxButton *btn3 = new wxButton(panel, wxID_ANY, wxT("Filtro2"));
+    wxButton *btn3 = new wxButton(panel, Id_Effect2, wxT("Filtro2"));
+    btn3->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_Effect2);
     hbox4->Add(btn3, 1, wxEXPAND, 10);
 
-    wxButton *btn4= new wxButton(panel, wxID_ANY, wxT("Filtro3"));
+    wxButton *btn4= new wxButton(panel, Id_Effect3, wxT("Filtro3"));
+    btn4->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_Effect3);
     hbox4->Add(btn4, 1, wxEXPAND, 10);
 
-    wxButton *btn5 = new wxButton(panel, wxID_ANY, wxT("Filtro4"));
+    wxButton *btn5 = new wxButton(panel, Id_Effect4, wxT("Filtro4"));
+    btn5->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_Effect4);
     hbox4->Add(btn5, 1, wxEXPAND, 10);
 
-    wxButton *btn6 = new wxButton(panel, wxID_ANY, wxT("Filtro5"));
+    wxButton *btn6 = new wxButton(panel, Id_Effect5, wxT("Filtro5"));
+    btn6->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_Effect5);
     hbox4->Add(btn6, 1, wxEXPAND, 10);
 
     //hbox4->Add(gs,1, wxEXPAND);
@@ -54,13 +53,16 @@ MainFrame::MainFrame()
     LoadMenu();
     Bind(wxEVT_MENU, &MainFrame::OpenFile, this, ID_ImgLoad);
     Bind(wxEVT_MENU, &MainFrame::imageSave, this, ID_ImgSave);
+
+    //Bind  button
+
 }
 
 void MainFrame::OpenFile(wxCommandEvent& event)
 {
     wxFileDialog *OpenDialog = new wxFileDialog(
             this, _("Choose a file to open"), wxEmptyString, wxEmptyString,
-            _("pictures (*.jpeg,*.png)|*.jpeg;*.png"),
+            _("Pictures (*.jpeg,*.png,*.jpg)|*.jpeg;*.png;*.jpg"),
             wxFD_OPEN, wxDefaultPosition);
 
     // Creates a "open file" dialog with 4 file types
@@ -88,4 +90,14 @@ void MainFrame::LoadMenu() {
     CreateStatusBar();
     SetStatusText("Welcome to wxWidgets!");
 
+}
+
+void MainFrame::btnEffectClick(wxCommandEvent &event) {
+    switch (event.GetId()) {
+        case Id_EffectNull:
+            break;
+        case Id_Effect1:
+            break;
+
+    }
 }
