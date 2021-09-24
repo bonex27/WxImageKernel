@@ -8,7 +8,7 @@ MainFrame::MainFrame()
         : wxFrame(NULL, wxID_ANY, "Kernel image processing",wxDefaultPosition,wxSize(1280,720))
 {
 
-    panel = new wxPanel(this,wxID_ANY,wxDefaultPosition,wxSize(1280,720),wxBORDER_SIMPLE);
+    panel = new wxPanel(this,wxID_ANY,wxDefaultPosition,wxSize(1280,720));
     //create a column in the layout of the panel
     vbox = new wxBoxSizer(wxVERTICAL);
 
@@ -74,7 +74,16 @@ void MainFrame::OpenFile(wxCommandEvent& event)
 }
 
 void MainFrame::imageSave(wxCommandEvent& event){
-    drawPane->saveImage();
+    wxFileDialog *saveDialog = new wxFileDialog(
+            this, _("Save the current image"), wxEmptyString, wxEmptyString,
+            _("JPEG files (*jpg)|*.jpg|PNG files (*png)|*.png"),
+            wxFD_SAVE, wxDefaultPosition);
+    std::cout << saveDialog->GetWildcard() << std::endl;
+    if (saveDialog->ShowModal() == wxID_OK){
+        CurrentDocPath = saveDialog->GetPath();
+        drawPane->saveImage(CurrentDocPath, wxBITMAP_TYPE_JPEG);
+    }
+
 }
 
 void MainFrame::LoadMenu() {

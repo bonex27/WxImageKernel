@@ -23,7 +23,7 @@ public:
     void OnSize(wxSizeEvent& event);
     void render(wxDC& dc);
     void changeImage(wxString file, wxBitmapType format);
-    void saveImage();
+    void saveImage(wxString fileName, wxBitmapType format);
 
     DECLARE_EVENT_TABLE()
 };

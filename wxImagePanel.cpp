@@ -5,12 +5,13 @@
 #include "wxImagePanel.h"
 #include <iostream>
 
+
+
 wxImagePanel::wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format) :
-        wxPanel(parent,wxID_ANY,wxDefaultPosition,wxSize(1280,600),wxBORDER_SIMPLE)
+        wxPanel(parent,wxID_ANY,wxDefaultPosition,wxSize(1280,600))
 {
     // load the file... ideally add a check to see if loading was successful
     std::cout << this->image.LoadFile(file, format) << std::endl;
-//    std::cout <<  this->img.LoadFile(file,format) << std::endl;
 
 }
 
@@ -81,9 +82,7 @@ void wxImagePanel::render(wxDC&  dc)
     //dc.SetUserScale(fHScale, fWScale);
     resized = wxBitmap(image.Scale(iImageW*fWScale,iImageH*fHScale,wxIMAGE_QUALITY_HIGH));
     int imgMargin = dc.GetSize().GetWidth() - (iImageW * fWScale);
-
     dc.DrawBitmap(resized,wxPoint(imgMargin/2,0),false);
-    std::cout<< dc.GetSize().GetWidth() << std::endl;
 }
 
 /*
@@ -104,6 +103,6 @@ void wxImagePanel::changeImage(wxString file, wxBitmapType format) {
     Update();
 }
 
-void wxImagePanel::saveImage() {
-    //image.SaveFile("test1", wxBITMAP_TYPE_JPEG);
+void wxImagePanel::saveImage(wxString fileName, wxBitmapType format) {
+    std::cout << image.SaveFile(fileName, format) << std::endl;
 }
