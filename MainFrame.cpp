@@ -7,22 +7,16 @@
 MainFrame::MainFrame()
         : wxFrame(NULL, wxID_ANY, "Kernel image processing",wxDefaultPosition,wxSize(1280,720))
 {
-    panel = new wxPanel(this, -1);
+
+    panel = new wxPanel(this,wxID_ANY,wxDefaultPosition,wxSize(1280,720),wxBORDER_SIMPLE);
     //create a column in the layout of the panel
     vbox = new wxBoxSizer(wxVERTICAL);
 
-    //Appends a spacer child to the sizer.
-    vbox->Add(-1, 10);
-
-    wxBoxSizer *hbox3 = new wxBoxSizer(wxHORIZONTAL);
+    //wxBoxSizer *hbox3 = new wxBoxSizer(wxHORIZONTAL);
 
     drawPane = new wxImagePanel(panel,"./Image/Ferrari-sf21.jpeg",wxBITMAP_TYPE_JPEG);
-
-
-    hbox3->Add(drawPane, 1, wxEXPAND);
-    vbox->Add(hbox3, 1, wxLEFT | wxRIGHT | wxEXPAND,10);
-
-    vbox->Add(-1, 25);
+    //hbox3->Add(drawPane, 1, wxEXPAND);
+    vbox->Add(drawPane, 1, wxALIGN_CENTER,0);
 
     wxBoxSizer *hbox4 = new wxBoxSizer(wxHORIZONTAL);
     //wxFlexGridSizer *fgs = new wxFlexGridSizer(1, 6, 5, 5);

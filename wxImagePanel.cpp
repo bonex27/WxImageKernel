@@ -6,13 +6,12 @@
 #include <iostream>
 
 wxImagePanel::wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format) :
-        wxPanel(parent)
+        wxPanel(parent,wxID_ANY,wxDefaultPosition,wxSize(1280,600),wxBORDER_SIMPLE)
 {
     // load the file... ideally add a check to see if loading was successful
-//    std::cout << this->image.LoadFile(file, format) << std::endl;
-    std::cout <<  this->img.LoadFile(file,format) << std::endl;
-    w = -1;
-    h = -1;
+    std::cout << this->image.LoadFile(file, format) << std::endl;
+//    std::cout <<  this->img.LoadFile(file,format) << std::endl;
+
 }
 
 /*
@@ -58,21 +57,18 @@ void wxImagePanel::render(wxDC&  dc)
     int iThisW = -1;        // the panel's width
 
     // how is the bitmap's actual size?
-    iImageH = img.GetHeight();
-    iImageW = img.GetWidth();
+    iImageH = image.GetHeight();
+    iImageW = image.GetWidth();
 
     //Panel size
     GetSize(&iThisW, &iThisH);
 
-    // no division by zero !
     if( ( iImageH> 0 ) && ( iImageW> 0 ) )
     {
-        // calculate the scaling factor for the 2 dimensions
+
         fHScale = (float) iThisH / (float) iImageH;
         fWScale = (float) iThisW / (float) iImageW;
 
-        // always take the smaller scaling factor,
-        // so that the bitmap will always fit into the panel's paintable area
         if(fHScale < fWScale)
         {
             fWScale = fHScale;
@@ -81,10 +77,13 @@ void wxImagePanel::render(wxDC&  dc)
         {
             fHScale = fWScale;
         }
-
     }
-    dc.SetUserScale(fHScale, fWScale);
-    dc.DrawBitmap(img,0,0,false);
+    //dc.SetUserScale(fHScale, fWScale);
+    resized = wxBitmap(image.Scale(iImageW*fWScale,iImageH*fHScale,wxIMAGE_QUALITY_HIGH));
+    int imgMargin = dc.GetSize().GetWidth() - (iImageW * fWScale);
+
+    dc.DrawBitmap(resized,wxPoint(imgMargin/2,0),false);
+    std::cout<< dc.GetSize().GetWidth() << std::endl;
 }
 
 /*
@@ -99,12 +98,12 @@ void wxImagePanel::OnSize(wxSizeEvent& event){
 
 void wxImagePanel::changeImage(wxString file, wxBitmapType format) {
     std::cout << "Load file: " << file << std::endl;
-    std::cout<<img.LoadFile(file, format) << std::endl;
-    std::cout << img.GetHeight() << std::endl;
+    std::cout<<image.LoadFile(file, format) << std::endl;
+    std::cout << image.GetHeight() << std::endl;
     Refresh();
     Update();
 }
 
 void wxImagePanel::saveImage() {
-    img.SaveFile("test1", wxBITMAP_TYPE_JPEG, NULL);
+    //image.SaveFile("test1", wxBITMAP_TYPE_JPEG);
 }

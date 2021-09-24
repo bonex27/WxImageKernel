@@ -11,9 +11,9 @@
 #endif //WXIMAGEKERNEL_WXIMAGEPANEL_H
 
 class wxImagePanel : public wxPanel{
-    wxBitmap img;
+    wxImage image;
     wxBitmap resized;
-    int w, h;
+
 
 public:
     wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format);
