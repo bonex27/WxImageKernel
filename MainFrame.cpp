@@ -17,14 +17,21 @@ MainFrame::MainFrame()
 
     vbox->Add(drawPane, 1, wxALIGN_CENTER,0);
 
+
     wxBoxSizer *hbox4 = new wxBoxSizer(wxHORIZONTAL);
 
 
+    wxImage img;
+    std::cout << img.LoadFile("./Image/Ferrari-sf21.jpeg", wxBITMAP_TYPE_JPEG) << std::endl;
+    this->ImageScaler(wxSize(70, 70),img);
+    wxBitmapButton *button1 = new wxBitmapButton(
+            panel, -1, this->ImageScaler(wxSize(70, 70),img), wxDefaultPosition, wxSize(50, 50), 0);
+    button1->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_EffectNull);
+    hbox4->Add(button1, 1, wxEXPAND, 10);
 
-
-    wxButton *btn1 = new wxButton(panel, Id_EffectNull, wxT("Nessuno"));
-    btn1->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_EffectNull);
-    hbox4->Add(btn1, 1, wxEXPAND, 10);
+//    wxButton *btn1 = new wxButton(panel, Id_EffectNull, wxT("Nessuno"));
+//    btn1->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_EffectNull);
+//    hbox4->Add(btn1, 1, wxEXPAND, 10);
 
     wxButton *btn2 = new wxButton(panel, Id_Effect1, wxT("Filtro1"));
     btn2->Bind(wxEVT_BUTTON, &MainFrame::btnEffectClick, this, Id_Effect1);
@@ -133,4 +140,33 @@ wxBitmapType MainFrame::getFormatFile(const wxString &fileName) {
         formatFile = wxBITMAP_TYPE_BMP;
     //other format files...
     return formatFile;
+}
+
+wxBitmap MainFrame::ImageScaler(wxSize s, wxImage &img) {
+    float fWScale = 1.0f;   // horizontal scaling factor
+    float fHScale = 1.0f;   // vertical scaling factor
+    int iImageH = -1;       // the bitmap's height
+    int iImageW = -1;       // the bitmap's width
+    int iThisH = s.GetHeight();        // the panel's height
+    int iThisW = s.GetWidth();        // the panel's width
+
+    // how is the bitmap's actual size?
+    iImageH = img.GetHeight();
+    iImageW = img.GetWidth();
+
+
+    if( ( iImageH> 0 ) && ( iImageW> 0 ) )
+    {
+
+        fHScale = (float) iThisH / (float) iImageH;
+        fWScale = (float) iThisW / (float) iImageW;
+
+        if(fHScale < fWScale)
+            fWScale = fHScale;
+        else
+            fHScale = fWScale;
+    }
+    //dc.SetUserScale(fHScale, fWScale);
+    return wxBitmap(img.Scale(iImageW*fWScale,iImageH*fHScale,wxIMAGE_QUALITY_HIGH));
+
 }
