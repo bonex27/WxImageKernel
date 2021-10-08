@@ -4,6 +4,7 @@
 
 #include "wxImagePanel.h"
 #include <iostream>
+#include "./Utility/ApplicationUtility.h"
 
 
 
@@ -11,7 +12,7 @@ wxImagePanel::wxImagePanel(wxPanel* parent, wxString file, wxBitmapType format) 
         wxPanel(parent,wxID_ANY,wxDefaultPosition,wxSize(1280,600))
 {
     // load the file... ideally add a check to see if loading was successful
-    this->image.LoadFile(file, format);
+    std::cout <<  this->image.LoadFile(file, format) << std::endl;
 
 }
 
@@ -50,34 +51,8 @@ void wxImagePanel::paintNow()
  */
 void wxImagePanel::render(wxDC&  dc)
 {
-    float fWScale = 1.0f;   // horizontal scaling factor
-    float fHScale = 1.0f;   // vertical scaling factor
-    int iImageH = -1;       // the bitmap's height
-    int iImageW = -1;       // the bitmap's width
-    int iThisH = -1;        // the panel's height
-    int iThisW = -1;        // the panel's width
-
-    // how is the bitmap's actual size?
-    iImageH = image.GetHeight();
-    iImageW = image.GetWidth();
-
-    //Panel size
-    GetSize(&iThisW, &iThisH);
-
-    if( ( iImageH> 0 ) && ( iImageW> 0 ) )
-    {
-
-        fHScale = (float) iThisH / (float) iImageH;
-        fWScale = (float) iThisW / (float) iImageW;
-
-        if(fHScale < fWScale)
-            fWScale = fHScale;
-        else
-            fHScale = fWScale;
-    }
-    //dc.SetUserScale(fHScale, fWScale);
-    resized = wxBitmap(image.Scale(iImageW*fWScale,iImageH*fHScale,wxIMAGE_QUALITY_HIGH));
-    int imgMargin = dc.GetSize().GetWidth() - (iImageW * fWScale);
+    resized = ImageScaler(this->GetSize(), image);
+    int imgMargin = dc.GetSize().GetWidth() - resized.GetWidth();
     dc.DrawBitmap(resized,wxPoint(imgMargin/2,0),false);
 }
 

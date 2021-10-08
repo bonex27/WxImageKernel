@@ -9,5 +9,5 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Image/Ferrari-sf21.jpeg DESTINATION DESTIN
 
 find_package(wxWidgets REQUIRED net gl core base)
 include(${wxWidgets_USE_FILE})
-add_executable(WxImageKernel main.cpp wxImagePanel.cpp wxImagePanel.h MainFrame.cpp MainFrame.h)
+add_executable(WxImageKernel main.cpp wxImagePanel.cpp wxImagePanel.h MainFrame.cpp MainFrame.h Utility/ApplicationUtility.cpp Utility/ApplicationUtility.h)
 target_link_libraries(WxImageKernel ${wxWidgets_LIBRARIES})
